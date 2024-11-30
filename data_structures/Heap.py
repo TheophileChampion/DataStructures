@@ -102,10 +102,10 @@ class Heap:
         Create a string representation of the tree.
         :return: a string representing a tree
         """
-        heap_string = self.string_sub_head(0)
+        heap_string = self.string_sub_heap(0)
         return "[]" if heap_string is None else f"[{heap_string}]"
 
-    def string_sub_head(self, index):
+    def string_sub_heap(self, index):
         """
         Create a sting representing the sub-heap.
         :param index: the index of the root node of the sub-heap
@@ -118,8 +118,8 @@ class Heap:
 
         # Retrieve the representation of the sub-heap of each child.
         index_child_1, index_child_2 = self.children_indices(index)
-        sub_heap_1 = self.string_sub_head(index_child_1)
-        sub_heap_2 = self.string_sub_head(index_child_2)
+        sub_heap_1 = self.string_sub_heap(index_child_1)
+        sub_heap_2 = self.string_sub_heap(index_child_2)
 
         # Return the representation of the sub-heap corresponding to the index specified as parameters.
         if sub_heap_1 is None and sub_heap_2 is None:
